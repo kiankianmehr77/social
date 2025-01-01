@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     # my apps:
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
+    'post.apps.PostConfig'
 ]
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
