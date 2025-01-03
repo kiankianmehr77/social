@@ -7,9 +7,19 @@
     {% endif %}
     <p> <a href="{% url 'accounts:user_profile' post.user.id %}">{{ post.user.username }} </a> - {{ post.updated |date:"Y-F"}}</p>
     <p> {{post.body}}</p> <hr>
+
+    {% if request.user.is_authenticated %}
+        <form action="" style="width: 30%;" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="send">
+        </form>
+    {% else %}
+        <p class="alert alert-danger">only logged user can comment.</p>
+    {% endif %}
     <p>{{comments.count}} comments </p>
     {% for c in comments %}
-        <div class="card bg-dark text-light">
+        <div class="card bg-dark text-light" style="margin-bottom: 5px;" >
             <p class="card-header">{{ c.user}} | {{ c.created|timesince }} ago</p>
             <p class="card-body">{{ c.body }}</p>
         </div>
