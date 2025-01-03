@@ -132,3 +132,13 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "accounts.authenticate.EmailBackend",
 ]
+
+# Google account
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kiankianmehr7744@gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_PASSWORD = 'ewicraktmrvxzeea'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Kian website'
